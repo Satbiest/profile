@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portofolio Satya Bintang Esa Resiadi — Data Analytics, Data Science, dan Business Intelligence. Lulusan Statistika UNS, Demak, Indonesia.">
+  <meta name="theme-color" content="#0b1218">
+  <meta property="og:title" content="Satya Resiadi | Data Portfolio">
+  <meta property="og:description" content="Mengubah data kompleks menjadi wawasan strategis yang bernilai bisnis.">
+  <meta property="og:type" content="website">
+  <title>Satya Resiadi | Data Analytics &amp; AI</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1218'/%3E%3Cpath d='M16 43V31M32 43V20M48 43V12' stroke='%2389ecd0' stroke-width='8'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <script>
+    // Terapkan preferensi sebelum render; tetap berfungsi jika storage diblokir.
+    try {
+      const saved = localStorage.getItem('satya-theme');
+      if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+    } catch (_) {}
+  </script>
+  <style>
+    /* 1. Token desain dan fondasi */
+    :root{color-scheme:dark;--bg:#0b1218;--surface:#111c25;--surface2:#172630;--text:#f0f5f7;--muted:#a9bbc6;--accent:#89ecd0;--ink:#07251e;--line:#2a3a45;--header:rgba(11,18,24,.95);--shadow:0 24px 70px #0003}
+    [data-theme="light"]{color-scheme:light;--bg:#f5f8fa;--surface:#fff;--surface2:#eaf1f4;--text:#132b38;--muted:#506573;--accent:#087b62;--ink:#fff;--line:#ccd9e0;--header:rgba(245,248,250,.95);--shadow:0 24px 70px #16394c0d}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 Inter, sans-serif}
+    h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.2}
+    h1{font-size:clamp(2.7rem,5.4vw,4.6rem);letter-spacing:-.055em;margin-bottom:24px}
+    h2{font-size:clamp(2rem,3.5vw,3rem);letter-spacing:-.045em;margin-bottom:18px}
+    h3{font-size:1.2rem;letter-spacing:-.025em}p{color:var(--muted)}
+    a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button,a,input,textarea{-webkit-tap-highlight-color:transparent}
+    button{cursor:pointer}button:disabled{cursor:default}button{color:inherit}a,button{touch-action:manipulation}
+    :focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+    ::selection{background:var(--accent);color:var(--ink)}[hidden]{display:none!important}
+    .container{width:min(1120px,calc(100% - 48px));margin:auto}.section{padding:100px 0;scroll-margin-top:20px}
+    .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:40px}
+    .section-head p{max-width:370px;margin-bottom:4px}.muted{color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 22px;border:1px solid var(--line);border-radius:8px;background:transparent;font-weight:600;line-height:1.4;transition:transform .2s,background .2s}
+    .btn:hover{transform:translateY(-3px);background:var(--surface2)}.btn-primary{background:var(--accent);border-color:var(--accent);color:var(--ink)}.btn-primary:hover{background:var(--accent)}
+    .actions{display:flex;flex-wrap:wrap;gap:12px}.tag{display:inline-block;font-size:.78rem;line-height:1.5;padding:5px 10px;border:1px solid var(--line);border-radius:5px;color:var(--muted)}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}.skip{position:fixed;top:-90px;left:20px;z-index:200;background:var(--accent);color:var(--ink);padding:12px}.skip:focus{top:12px}
+    /* 2. Navigasi */
+    header{position:sticky;top:0;z-index:50;background:var(--header);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav-row{height:80px;display:flex;align-items:center;gap:24px}.brand{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.2rem;letter-spacing:-.04em;margin-right:auto;white-space:nowrap}.brand span{color:var(--accent)}
+    nav{display:flex;gap:24px}nav a{font-size:.85rem;color:var(--muted);padding:10px 0}nav a:hover,nav a[aria-current="location"]{color:var(--accent)}
+    .icon-btn{width:44px;height:44px;flex-shrink:0;display:grid;place-items:center;background:var(--surface);border:1px solid var(--line);border-radius:8px}.menu-toggle{display:none}
+    /* 3. Hero: editorial typography + panel disiplin data */
+    .hero{padding:90px 0 66px}.hero-grid{display:grid;grid-template-columns:1.45fr 1fr;align-items:center;gap:64px}.hero h1 span{color:var(--accent)}
+    .role{font-size:.92rem;font-weight:500;color:var(--text);margin-bottom:20px}.intro{font-size:1.08rem;max-width:560px;margin-bottom:30px}.location{display:flex;align-items:center;gap:10px;font-size:.85rem;margin-bottom:26px}
+    .hero-note{font-size:.78rem;margin:14px 0 0}.hero-note a{text-decoration:underline;text-underline-offset:4px}
+    .data-panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;box-shadow:var(--shadow);position:relative}
+    .panel-top{display:flex;justify-content:space-between;gap:12px;padding-bottom:22px;border-bottom:1px solid var(--line);font-size:.76rem;color:var(--muted);letter-spacing:.08em}
+    .panel-top strong{color:var(--accent)}.panel-title{font-size:1.65rem;margin:26px 0 24px;letter-spacing:-.04em}
+    .pipeline{list-style:none;padding:0;margin:0}.pipeline li{display:grid;grid-template-columns:38px 1fr;gap:15px;padding:17px 0;border-bottom:1px solid var(--line)}.pipeline li:last-child{border:0}
+    .pipeline .number{font-size:.8rem;color:var(--accent);padding-top:3px}.pipeline strong{font-size:.95rem}.pipeline p{font-size:.82rem;margin:4px 0 0}
+    .panel-footer{display:flex;gap:8px;align-items:center;margin-top:20px;font-size:.75rem;color:var(--muted)}
+    .facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:70px}
+    .fact{padding:25px 28px 25px 0}.fact+.fact{border-left:1px solid var(--line);padding-left:28px}.fact strong{display:block;font-size:1.4rem;letter-spacing:-.03em}.fact span{font-size:.8rem;color:var(--muted)}
+    /* 4. Profil, keahlian, pengalaman */
+    .about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:70px}.about-copy p{margin-bottom:20px}.education{border-left:3px solid var(--accent);padding:3px 0 3px 20px;margin-top:30px}.education strong{display:block}.education span{font-size:.85rem;color:var(--muted)}
+    .skills{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px}.skill{padding:26px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}.skill h3{font-size:1rem;margin-bottom:18px}.skill i{color:var(--accent);margin-right:10px}
+    .band{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .experience-list{border-top:1px solid var(--line)}.experience{display:grid;grid-template-columns:60px 1fr 1fr;gap:26px;padding:28px 0;border-bottom:1px solid var(--line)}.experience .index{color:var(--accent);font-size:.85rem;padding-top:2px}.experience h3{font-size:1.05rem;margin-bottom:8px}.experience p{margin:0;font-size:.9rem}.experience .position{color:var(--text)}
+    /* 5. Proyek dan penghargaan */
+    .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}.filter{background:transparent;border:1px solid var(--line);padding:8px 16px;border-radius:6px;font-size:.85rem;min-height:44px}.filter[aria-pressed="true"]{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.project{display:flex;flex-direction:column;position:relative;padding:30px;background:var(--surface);border:1px solid var(--line);border-radius:12px;transition:border-color .2s,transform .2s}.project:hover{border-color:var(--accent);transform:translateY(-4px)}
+    .project.featured{grid-column:1/-1;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;background:linear-gradient(120deg,var(--surface),var(--surface2))}.project .category{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}.project h3{font-size:1.45rem;margin-bottom:16px}.project p{font-size:.92rem}.project .tags{margin-top:auto;padding-top:10px}.project.featured .tags{margin-top:0}.project-number{font-size:.8rem;color:var(--muted);margin-bottom:18px}
+    .project details{border-top:1px solid var(--line);margin-top:24px;padding-top:16px;font-size:.85rem}.project summary{cursor:pointer;color:var(--accent);padding:4px 0}.project details p{font-size:.85rem;margin:12px 0 0}.feature-aside{border-left:1px solid var(--line);padding-left:34px;align-self:center}.feature-aside strong{display:block;font-size:1.1rem;margin-bottom:10px}
+    .awards{list-style:none;margin:0;padding:0}.award{display:grid;grid-template-columns:64px 1fr auto;align-items:center;gap:24px;padding:26px 0;border-bottom:1px solid var(--line)}.award:first-child{border-top:1px solid var(--line)}.medal{width:54px;height:54px;border:1px solid var(--line);display:grid;place-items:center;border-radius:50%;color:var(--accent);font-size:1.2rem}.award h3{font-size:1.1rem;margin:0 0 7px}.award p{font-size:.87rem;margin:0}.award time{font-size:.85rem;color:var(--muted)}
+    /* 6. Kontak dan footer */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}.contact-links{display:grid;gap:14px;margin-top:28px}.contact-links a{overflow-wrap:anywhere}.contact-links a:hover{color:var(--accent)}.contact-links i{width:25px;color:var(--accent)}.social-unset{color:var(--muted);font-size:.85rem}
+    form{padding:28px;border:1px solid var(--line);background:var(--bg);border-radius:12px}label{display:block;font-size:.85rem;margin-bottom:7px}input,textarea{display:block;width:100%;padding:12px 14px;color:var(--text);background:var(--surface);border:1px solid var(--line);border-radius:6px;margin-bottom:18px}textarea{min-height:130px;resize:vertical}form .btn{width:100%}.form-note{font-size:.78rem;margin:14px 0 0}.status{font-size:.85rem;color:var(--accent);margin:12px 0 0}
+    footer{padding:30px 0}.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:.8rem;color:var(--muted)}.footer-social{display:flex;gap:20px;flex-wrap:wrap}
+    /* Konten tetap terlihat tanpa JavaScript atau IntersectionObserver. */
+    .reveal.in-view{animation:fade-in .65s ease both}@keyframes fade-in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    /* 7. Responsif dan aksesibilitas gerakan */
+    @media(min-width:1600px){.hero{padding-top:120px}}
+    @media(max-width:960px){.hero-grid{gap:32px;grid-template-columns:1.2fr 1fr}.about-grid,.contact-grid{gap:36px}nav{gap:16px}.nav-row{gap:16px}.data-panel{padding:22px}.hero h1{font-size:3.1rem}}
+    @media(max-width:780px){.container{width:calc(100% - 36px)}.section{padding:70px 0}.nav-row{height:72px}.hero{padding:60px 0 40px}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero h1{font-size:clamp(2.6rem,9vw,4rem)}.data-panel{margin-top:12px}.section-head{display:block}.section-head p{max-width:100%}.facts{margin-top:40px}.fact{padding:20px 12px 20px 0}.fact+.fact{padding-left:16px}.fact strong{font-size:1.1rem}.experience{grid-template-columns:35px 1fr;gap:14px}.experience>p{grid-column:2}.project.featured{display:block}.feature-aside{border-left:0;border-top:1px solid var(--line);padding:20px 0 0;margin-top:24px}.footer-row{align-items:start;flex-direction:column}
+      .js .menu-toggle{display:grid}.js nav{display:none;position:absolute;top:72px;left:0;right:0;padding:20px;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:var(--shadow)}.js nav.open{display:grid;grid-template-columns:1fr 1fr;gap:8px}.js nav a{padding:10px 14px}
+      html:not(.js) .nav-row{height:auto;flex-wrap:wrap;padding:15px 0}html:not(.js) nav{order:3;width:100%;flex-wrap:wrap}}
+    @media(max-width:540px){.projects,.skills{grid-template-columns:1fr}.project.featured{grid-column:auto}.project{padding:24px}.award{grid-template-columns:44px 1fr;gap:16px}.medal{width:42px;height:42px}.award time{grid-column:2}.contact-grid{gap:28px}form{padding:22px}.facts{grid-template-columns:1fr}.fact,.fact+.fact{padding:16px 0;border-left:0}.fact+.fact{border-top:1px solid var(--line)}.fact strong{display:inline;margin-right:10px}.brand{font-size:1.1rem}.nav-row{gap:10px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Lewati navigasi</a>
+  <header>
+    <div class="container nav-row">
+      <a class="brand" href="#home" aria-label="Satya Resiadi, beranda">satya<span>.resiadi</span></a>
+      <nav id="navigation" aria-label="Navigasi utama">
+        <a href="#home" aria-current="location">Home</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#awards">Awards</a><a href="#contact">Contact</a>
+      </nav>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Aktifkan tema terang" hidden><i class="fa-solid fa-sun" aria-hidden="true"></i></button>
+      <button class="icon-btn menu-toggle" id="menu-toggle" type="button" aria-label="Buka menu" aria-controls="navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </div>
+  </header>
+  <main id="main">
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="reveal">
+            <p class="eyebrow">Data. Insight. Impact.</p>
+            <p class="location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Demak, Indonesia</p>
+            <h1>Satya Bintang<br>Esa <span>Resiadi.</span></h1>
+            <p class="role">Data Analyst | Data Scientist | Business Intelligence</p>
+            <p class="intro">Mengubah data kompleks menjadi wawasan strategis, solusi cerdas, dan keputusan yang bernilai bisnis.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="#projects">Lihat Proyek</a>
+              <a class="btn" id="cv-link" href="mailto:satyabintang10@gmail.com?subject=Permintaan%20CV"><i class="fa-solid fa-download" aria-hidden="true"></i> Unduh CV</a>
+            </div>
+            <p class="hero-note" id="cv-note">CV tersedia melalui <a href="mailto:satyabintang10@gmail.com?subject=Permintaan%20CV">permintaan email</a>.</p>
+          </div>
+          <aside class="data-panel reveal" aria-label="Fokus keahlian">
+            <div class="panel-top"><span>THE DATA PERSPECTIVE</span><strong>SR / 01</strong></div>
+            <h2 class="panel-title">Beyond numbers.<br>Meaningful decisions.</h2>
+            <ol class="pipeline">
+              <li><span class="number">01 /</span><div><strong>Understand the data</strong><p>Statistika · Eksplorasi · Konteks bisnis</p></div></li>
+              <li><span class="number">02 /</span><div><strong>Discover the patterns</strong><p>Machine learning · Analisis · Pemodelan</p></div></li>
+              <li><span class="number">03 /</span><div><strong>Communicate the insight</strong><p>Visualisasi · Dashboard · Data storytelling</p></div></li>
+            </ol>
+            <div class="panel-footer"><i class="fa-solid fa-chart-simple" aria-hidden="true"></i> Statistics meets business intelligence.</div>
+          </aside>
+        </div>
+        <div class="facts">
+          <div class="fact"><strong>Statistika</strong><span>Universitas Sebelas Maret</span></div>
+          <div class="fact"><strong>3.54 / 4.00</strong><span>Indeks Prestasi Kumulatif</span></div>
+          <div class="fact"><strong>Analytics · AI · BI</strong><span>Fokus profesional</span></div>
+        </div>
+      </div>
+    </section>
+    <!-- ABOUT & SKILLS -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="about-grid reveal">
+          <div><p class="eyebrow">01 / About me</p><h2>Berangkat dari data.<br>Berorientasi pada dampak.</h2></div>
+          <div class="about-copy">
+            <p lang="en">Statistics graduate passionate about Data Analytics, Data Science, and Business Intelligence with hands-on experience transforming complex datasets into actionable insights.</p>
+            <p>Saya tertarik menghubungkan ketelitian statistik dengan kebutuhan bisnis: memahami masalah, menemukan pola, dan menyampaikan insight melalui analisis, model, serta dashboard yang mudah dipahami.</p>
+            <div class="education"><strong>Sarjana Statistika (S.Stat.)</strong><span>Universitas Sebelas Maret · IPK 3.54/4.00</span></div>
+          </div>
+        </div>
+        <div class="skills">
+          <article class="skill reveal"><h3><i class="fa-solid fa-code" aria-hidden="true"></i>Programming &amp; Database</h3><div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">R</span></div></article>
+          <article class="skill reveal"><h3><i class="fa-solid fa-chart-column" aria-hidden="true"></i>Data Visualization &amp; BI</h3><div class="tags"><span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Google Looker Studio</span><span class="tag">Excel (Advanced)</span></div></article>
+          <article class="skill reveal"><h3><i class="fa-solid fa-brain" aria-hidden="true"></i>Machine Learning &amp; AI</h3><div class="tags"><span class="tag">Scikit-learn</span><span class="tag">LSTM · CNN · GRU</span><span class="tag">RAG Chatbot</span><span class="tag">NLP</span><span class="tag">Computer Vision</span></div></article>
+          <article class="skill reveal"><h3><i class="fa-solid fa-sliders" aria-hidden="true"></i>Tools &amp; Methods</h3><div class="tags"><span class="tag">Data Cleaning</span><span class="tag">Statistical Analysis</span><span class="tag">Feature Engineering</span></div></article>
+        </div>
+      </div>
+    </section>
+    <!-- EXPERIENCE: tambahkan periode dan capaian terverifikasi jika tersedia. -->
+    <section id="experience" class="section band">
+      <div class="container">
+        <div class="section-head reveal"><div><p class="eyebrow">02 / Experience</p><h2>Pengalaman profesional.</h2></div><p>Perspektif lintas industri dalam analitik, data science, dan business intelligence.</p></div>
+        <div class="experience-list">
+          <article class="experience reveal"><span class="index">01</span><div><h3>PT Asuransi BRI Life</h3><p>Bancassurance Strategy Division</p></div><p class="position">Business Analyst Intern</p></article>
+          <article class="experience reveal"><span class="index">02</span><div><h3>Technocolabs Softwares Inc.</h3></div><p class="position">Data Scientist Intern</p></article>
+          <article class="experience reveal"><span class="index">03</span><div><h3>PT Telekomunikasi Indonesia Tbk</h3><p>Digital Business &amp; Technology</p></div><p class="position">Data Scientist Intern</p></article>
+          <article class="experience reveal"><span class="index">04</span><div><h3>PT Global Data Inspirasi</h3></div><p class="position">Data Analyst Intern</p></article>
+          <article class="experience reveal"><span class="index">05</span><div><h3>Kudata.Id</h3></div><p class="position">Data Analyst Intern</p></article>
+        </div>
+      </div>
+    </section>
+    <!-- PROJECTS: ringkasan dapat diperluas tanpa tautan demo yang belum tersedia. -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head reveal"><div><p class="eyebrow">03 / Selected work</p><h2>Data menjadi solusi.</h2></div><p>Dari dashboard bisnis hingga kecerdasan buatan dan pemodelan deret waktu.</p></div>
+        <div class="filters" role="group" aria-label="Filter kategori proyek" id="filters" hidden>
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">Semua</button><button class="filter" type="button" data-filter="ai" aria-pressed="false">AI &amp; ML</button><button class="filter" type="button" data-filter="bi" aria-pressed="false">Dashboard &amp; BI</button><button class="filter" type="button" data-filter="engineering" aria-pressed="false">Data Engineering</button>
+        </div>
+        <p class="sr-only" id="project-status" role="status"></p>
+        <div class="projects">
+          <article class="project featured reveal" data-category="ai">
+            <div><p class="category">Featured / Natural Language Processing</p><h3>TALENTA</h3><p>AI-powered RAG chatbot untuk eksplorasi informasi laporan Telkom melalui percakapan berbahasa alami.</p><div class="tags"><span class="tag">RAG</span><span class="tag">NLP</span><span class="tag">LLM</span></div></div>
+            <div class="feature-aside"><strong>Knowledge, made accessible.</strong><p>Menghubungkan pertanyaan pengguna dengan konteks dokumen yang relevan.</p><details><summary>Ringkasan proyek</summary><p>Telkom Annual Report Language Model Assistant menggabungkan pencarian informasi dan model bahasa untuk membantu penelusuran isi laporan.</p></details></div>
+          </article>
+          <article class="project reveal" data-category="engineering bi"><span class="project-number">PROJECT / 02</span><p class="category">Data Engineering &amp; BI</p><h3>Real-Time Data Pipeline</h3><p>Pipeline data yang terhubung dengan dashboard Power BI untuk mendukung pemantauan informasi yang terus diperbarui.</p><div class="tags"><span class="tag">Data Pipeline</span><span class="tag">Power BI</span></div><details><summary>Ringkasan proyek</summary><p>Berfokus pada alur dari pengumpulan data hingga penyajian informasi dalam dashboard monitoring.</p></details></article>
+          <article class="project reveal" data-category="bi"><span class="project-number">PROJECT / 03</span><p class="category">Business Intelligence</p><h3>AMKKM Program Dashboard</h3><p>Dashboard program AMKKM BRI Life untuk menyajikan informasi kinerja dalam tampilan yang terstruktur.</p><div class="tags"><span class="tag">Dashboard</span><span class="tag">Business Analytics</span></div><details><summary>Ringkasan proyek</summary><p>Menyajikan ringkasan indikator program untuk membantu monitoring dan pembacaan kinerja bisnis.</p></details></article>
+          <article class="project reveal" data-category="bi"><span class="project-number">PROJECT / 04</span><p class="category">Data Analytics</p><h3>Survey Performance Dashboard</h3><p>Visualisasi hasil survei untuk membantu memahami pola respons dan membaca indikator kinerja.</p><div class="tags"><span class="tag">Survey Analytics</span><span class="tag">Data Visualization</span></div><details><summary>Ringkasan proyek</summary><p>Mengorganisasi hasil survei menjadi ringkasan visual yang mendukung eksplorasi dan komunikasi temuan.</p></details></article>
+          <article class="project reveal" data-category="ai"><span class="project-number">PROJECT / 05</span><p class="category">Research / Undergraduate Thesis</p><h3>Early Detection of Financial Crises</h3><p>Penelitian deteksi dini krisis keuangan melalui pemodelan deret waktu dengan deep learning.</p><div class="tags"><span class="tag">LSTM</span><span class="tag">GRU</span><span class="tag">Time Series</span></div><details><summary>Ringkasan proyek</summary><p>Mengeksplorasi model LSTM dan GRU untuk mengenali pola temporal sebagai dasar pengembangan sistem peringatan dini.</p></details></article>
+        </div>
+      </div>
+    </section>
+    <!-- AWARDS -->
+    <section id="awards" class="section">
+      <div class="container">
+        <div class="section-head reveal"><div><p class="eyebrow">04 / Recognition</p><h2>Prestasi &amp; penghargaan.</h2></div><p>Analisis, ide, dan komunikasi yang diuji dalam kompetisi.</p></div>
+        <ul class="awards">
+          <li class="award reveal"><span class="medal"><i class="fa-solid fa-trophy" aria-hidden="true"></i></span><div><h3>3rd Place</h3><p>SPARK Telkomsel Datathon · Institut Teknologi Bandung</p></div><time datetime="2025">2025</time></li>
+          <li class="award reveal"><span class="medal"><i class="fa-solid fa-microphone" aria-hidden="true"></i></span><div><h3>Best Presentation</h3><p>KIS ANAVA · Universitas Gadjah Mada</p></div><time datetime="2025">2025</time></li>
+          <li class="award reveal"><span class="medal"><i class="fa-solid fa-medal" aria-hidden="true"></i></span><div><h3>2nd Place</h3><p>Data Mining Competition · UTM</p></div><time datetime="2025">2025</time></li>
+        </ul>
+      </div>
+    </section>
+    <!-- CONTACT: formulir mailto tanpa backend dan tanpa klaim pengiriman. -->
+    <section id="contact" class="section band">
+      <div class="container contact-grid">
+        <div class="reveal"><p class="eyebrow">05 / Let's connect</p><h2>Ada tantangan data?<br>Mari berdiskusi.</h2><p>Untuk peluang profesional, kolaborasi proyek, atau diskusi seputar data dan AI.</p>
+          <div class="contact-links">
+            <a href="mailto:satyabintang10@gmail.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i> satyabintang10@gmail.com</a>
+            <a data-social="linkedin" hidden><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a>
+            <a data-social="github" hidden><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+            <span class="social-unset" id="social-note">LinkedIn &amp; GitHub: tautan segera tersedia.</span>
+            <span class="muted"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Demak, Indonesia</span>
+          </div>
+        </div>
+        <form id="contact-form" class="reveal" hidden>
+          <label for="name">Nama</label><input id="name" name="name" autocomplete="name" placeholder="Nama Anda" maxlength="100" required>
+          <label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="nama@email.com" maxlength="200" required>
+          <label for="message">Pesan</label><textarea id="message" name="message" placeholder="Ceritakan kebutuhan atau ide Anda…" maxlength="1500" required></textarea>
+          <button class="btn btn-primary" type="submit">Tulis Pesan di Email <i class="fa-regular fa-envelope" aria-hidden="true"></i></button>
+          <p class="form-note">Membuka aplikasi email Anda. Pesan belum terkirim sampai Anda menekan Kirim di aplikasi tersebut.</p>
+          <p class="status" id="form-status" role="status"></p>
+        </form>
+        <noscript><p>Untuk menghubungi saya, kirim email ke <a href="mailto:satyabintang10@gmail.com">satyabintang10@gmail.com</a>.</p></noscript>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container footer-row"><span>© <span id="year">2026</span> Satya Bintang Esa Resiadi.</span><div class="footer-social"><a href="mailto:satyabintang10@gmail.com">Email</a><a data-social="linkedin" hidden>LinkedIn</a><a data-social="github" hidden>GitHub</a><a href="#home">Kembali ke atas</a></div></div></footer>
+  <script>
+    'use strict';
+    /* KONFIGURASI: isi URL asli. CV memakai path relatif (tanpa awalan /).
+       Contoh cv: './CV-Satya-Resiadi.pdf', lalu upload PDF di sebelah index.html.
+       Kosong = sosial disembunyikan; tombol CV membuka permintaan lewat email. */
+    const CONFIG = {
+      linkedin: '', // https://www.linkedin.com/in/USERNAME/
+      github: '',   // https://github.com/USERNAME
+      cv: ''
+    };
+    const root = document.documentElement;
+    const nav = document.getElementById('navigation');
+    const menu = document.getElementById('menu-toggle');
+    const theme = document.getElementById('theme-toggle');
+
+    // Menu mobile: tutup setelah navigasi, Escape, atau klik di luar header.
+    function closeMenu(returnFocus = false) {
+      nav.classList.remove('open');
+      menu.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-label', 'Buka menu');
+      if (returnFocus) menu.focus();
+    }
+    menu.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menu.setAttribute('aria-expanded', String(open));
+      menu.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeMenu()));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && nav.classList.contains('open')) closeMenu(true);
+    });
+    document.addEventListener('click', e => {
+      if (!e.target.closest('header')) closeMenu();
+    });
+    window.addEventListener('resize', () => { if (window.innerWidth > 780) closeMenu(); });
+    root.classList.add('js');
+
+    // Tema gelap menjadi default; preferensi tersimpan jika storage tersedia.
+    function updateThemeButton() {
+      const dark = root.dataset.theme === 'dark';
+      theme.setAttribute('aria-label', dark ? 'Aktifkan tema terang' : 'Aktifkan tema gelap');
+      theme.querySelector('i').className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      document.querySelector('meta[name="theme-color"]').content = dark ? '#0b1218' : '#f5f8fa';
+    }
+    theme.addEventListener('click', () => {
+      root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      try { localStorage.setItem('satya-theme', root.dataset.theme); } catch (_) {}
+      updateThemeButton();
+    });
+    updateThemeButton(); theme.hidden = false;
+
+    // Hanya aktifkan tautan sosial HTTPS yang telah dikonfigurasi.
+    const missingSocial = [];
+    ['linkedin', 'github'].forEach(key => {
+      let url;
+      try { url = new URL(CONFIG[key]); } catch (_) {}
+      if (!url || url.protocol !== 'https:') {
+        missingSocial.push(key === 'linkedin' ? 'LinkedIn' : 'GitHub'); return;
+      }
+      document.querySelectorAll('[data-social="' + key + '"]').forEach(a => {
+        a.href = url.href; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.hidden = false;
+      });
+    });
+    const socialNote = document.getElementById('social-note');
+    socialNote.textContent = missingSocial.join(' & ') + ': tautan segera tersedia.';
+    socialNote.hidden = missingSocial.length === 0;
+    if (CONFIG.cv.trim()) {
+      const cv = document.getElementById('cv-link');
+      cv.href = CONFIG.cv; cv.setAttribute('download', 'CV-Satya-Resiadi.pdf');
+      document.getElementById('cv-note').hidden = true;
+    }
+
+    // Filter proyek mendukung lebih dari satu kategori per proyek.
+    const projects = [...document.querySelectorAll('.project')];
+    const filters = [...document.querySelectorAll('.filter')];
+    filters.forEach(button => button.addEventListener('click', () => {
+      filters.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+      let count = 0;
+      projects.forEach(project => {
+        const show = button.dataset.filter === 'all' || project.dataset.category.split(' ').includes(button.dataset.filter);
+        project.hidden = !show; if (show) count++;
+      });
+      document.getElementById('project-status').textContent = count + ' proyek ditampilkan.';
+    }));
+    document.getElementById('filters').hidden = false;
+
+    // Encode seluruh input agar karakter khusus aman di subject/body mailto.
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const name = form.elements.name.value.trim();
+      const email = form.elements.email.value.trim();
+      const message = form.elements.message.value.trim();
+      const status = document.getElementById('form-status');
+      if (!name || !message) { status.textContent = 'Nama dan pesan tidak boleh hanya berisi spasi.'; return; }
+      const subject = 'Portfolio inquiry — ' + name.replace(/[\r\n]/g, ' ');
+      const body = 'Halo Satya,\n\n' + message + '\n\nSalam,\n' + name + '\nEmail: ' + email;
+      status.textContent = 'Lanjutkan di aplikasi email. Jika tidak terbuka, gunakan tautan email di samping formulir.';
+      window.location.href = 'mailto:satyabintang10@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+    form.hidden = false;
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Fade-in progresif; tidak menyembunyikan konten ketika JavaScript gagal.
+    if ('IntersectionObserver' in window) {
+      const reveals = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('in-view'); reveals.unobserve(entry.target); }
+        });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.reveal').forEach(el => reveals.observe(el));
+    }
+    // Tandai bagian aktif, termasuk ketika pengguna menggulir manual.
+    const sections = [...document.querySelectorAll('main section[id]')];
+    let scheduled = false;
+    function updateNavigation() {
+      let active = sections[0].id;
+      sections.forEach(section => { if (section.getBoundingClientRect().top <= 160) active = section.id; });
+      nav.querySelectorAll('a').forEach(a => {
+        if (a.hash === '#' + active) a.setAttribute('aria-current', 'location');
+        else a.removeAttribute('aria-current');
+      });
+      scheduled = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!scheduled) { scheduled = true; requestAnimationFrame(updateNavigation); }
+    }, { passive: true });
+    updateNavigation();
+  </script>
+</body>
+</html>
